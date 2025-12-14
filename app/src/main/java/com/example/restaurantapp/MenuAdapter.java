@@ -38,7 +38,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
 
         holder.foodNameTextView.setText(currentItem.getName());
         holder.foodPriceTextView.setText(String.format("Rs. %.2f", currentItem.getPrice())); // Format price
-        holder.foodImageView.setImageResource(currentItem.getImageResId());
+        holder.foodImageView.setImageResource(currentItem.getImageResource());
 
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override

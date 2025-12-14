@@ -2,16 +2,15 @@ package com.example.restaurantapp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CartManager {
 
     private static CartManager instance;
     private List<FoodItem> cartItems = new ArrayList<>();
 
-    // Private constructor taake iska object bahar se na banaya ja sake
     private CartManager() {}
 
-    // Singleton pattern: Isse poori app mein sirf ek hi CartManager object rahega
     public static synchronized CartManager getInstance() {
         if (instance == null) {
             instance = new CartManager();
@@ -19,8 +18,14 @@ public class CartManager {
         return instance;
     }
 
-    public void addItem(FoodItem item) {
-        cartItems.add(item);
+    public void addItem(FoodItem newItem) {
+        for (FoodItem existingItem : cartItems) {
+            if (Objects.equals(existingItem.getName(), newItem.getName())) {
+                existingItem.incrementQuantity();
+                return;
+            }
+        }
+        cartItems.add(newItem);
     }
 
     public List<FoodItem> getCartItems() {
@@ -30,7 +35,7 @@ public class CartManager {
     public double getTotalPrice() {
         double total = 0.0;
         for (FoodItem item : cartItems) {
-            total += item.getPrice();
+            total += item.getPrice() * item.getQuantity();
         }
         return total;
     }
@@ -38,4 +43,10 @@ public class CartManager {
     public void clearCart() {
         cartItems.clear();
     }
+
+    public void removeItem(FoodItem itemToRemove) {
+        cartItems.remove(itemToRemove);
+    }
 }
+
+

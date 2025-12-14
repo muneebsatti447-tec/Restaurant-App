@@ -57,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 loginUser(email, password);
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });
 
@@ -77,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                        startActivity(intent);
+                        finish();
 
                     } else {
 
