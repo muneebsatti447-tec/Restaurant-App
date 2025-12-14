@@ -3,6 +3,10 @@ package com.example.restaurantapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -21,7 +25,11 @@ public class ThankYouActivity extends AppCompatActivity {
                 navigateToHome();
             }
         });
+        TextView thankYouMessage = findViewById(R.id.thankYouMessage);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        thankYouMessage.startAnimation(animation);
     }
+
 
     private void navigateToHome() {
         Intent intent = new Intent(ThankYouActivity.this, MenuActivity.class);
@@ -36,4 +44,5 @@ public class ThankYouActivity extends AppCompatActivity {
         navigateToHome();
         super.onBackPressed();
     }
+
 }

@@ -7,7 +7,7 @@
     android:background="@drawable/loginbg"
     tools:context=".ThankYouActivity">
 
-    <!-- Lottie Animation for a "Success" or "Tick" animation -->
+
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
@@ -18,11 +18,26 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779"
+        app:layout_constraintVertical_bias="0.969"
         app:layout_constraintVertical_chainStyle="packed"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/food" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/order" />
 
     <TextView
         android:id="@+id/thankYouTitle"
@@ -35,25 +50,28 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/thankYouMessage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795" />
 
     <TextView
         android:id="@+id/thankYouMessage"
-        android:layout_width="355dp"
-        android:layout_height="117dp"
+        android:layout_width="324dp"
+        android:layout_height="108dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Your order has been placed successfully.\nIt will be delivered in approximately 30 minutes."
-        android:textSize="18sp"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/animation_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backFab2"
