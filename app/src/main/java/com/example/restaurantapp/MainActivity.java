@@ -1,3 +1,4 @@
+
 package com.example.restaurantapp;
 
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -15,6 +17,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,12 +79,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-
                         FirebaseUser user = mAuth.getCurrentUser();
-                        Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                        startActivity(intent);
-                        finish();
+                        if (user != null) {
+                            checkUserRole(user.getUid());
+                        }
 
                     } else {
 
@@ -86,4 +91,37 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+
+    private void checkUserRole(String uid) {
+
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.child("isAdmin").exists() && Boolean.TRUE.equals(snapshot.child("isAdmin").getValue(Boolean.class))) {
+                    Toast.makeText(MainActivity.this, "Welcome Admin!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, AdminDashboardActivity.class);
+
+                    startActivity(intent);
+                } else {
+
+                    Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                    startActivity(intent);
+                }
+                finish();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Error checking user role: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
 }

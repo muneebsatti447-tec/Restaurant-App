@@ -36,9 +36,10 @@ dependencies {
     implementation 'androidx.activity:activity:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation("com.google.firebase:firebase-database")
-    implementation("androidx.annotation:annotation:1.8.1") // Ya isse naya version
+    implementation("androidx.annotation:annotation:1.8.1")
 
     implementation 'com.airbnb.android:lottie:6.7.1'
+
 
     implementation platform('com.google.firebase:firebase-bom:34.6.0')
     implementation 'com.google.firebase:firebase-analytics'

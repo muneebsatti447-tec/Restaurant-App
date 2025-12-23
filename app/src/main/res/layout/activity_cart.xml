@@ -9,9 +9,11 @@
 
     <TextView
         android:id="@+id/cartTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="407dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="16dp"
+        android:background="#80000000"
+        android:gravity="center"
         android:text="Your Cart"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -69,6 +71,6 @@
         app:layout_constraintBottom_toTopOf="@id/checkoutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.128" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
