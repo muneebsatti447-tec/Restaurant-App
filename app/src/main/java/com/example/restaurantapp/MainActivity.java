@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (snapshot.child("isAdmin").exists() && Boolean.TRUE.equals(snapshot.child("isAdmin").getValue(Boolean.class))) {
                     Toast.makeText(MainActivity.this, "Welcome Admin!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, AdminDashboardActivity.class);
+                    Intent intent = new Intent(MainActivity.this, AdminPanelActivity.class);
 
                     startActivity(intent);
                 } else {

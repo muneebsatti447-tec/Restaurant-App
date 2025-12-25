@@ -9,6 +9,7 @@ public class Order {
     private double totalPrice;
     private List<FoodItem> items;
     private String orderId;
+    private String shippingAddress;
 
     public Order() {
     }
@@ -36,7 +37,9 @@ public class Order {
     public String getOrderId() {
         return orderId;
     }
-
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
@@ -59,5 +62,9 @@ public class Order {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 }

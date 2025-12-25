@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F4F7"
+    tools:context=".AdminPanelActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Dashboard"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="?attr/colorPrimary"/>
+
+    <!-- Statistics Grid -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:padding="14dp">
+
+        <!-- Total Revenue Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Revenue"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/tvTotalRevenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs 0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Total Users Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Users"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/tvTotalUsers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Total Orders Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Orders"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/tvTotalOrders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Menu Items Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu Items"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/tvMenuItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorPrimary"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+    <!-- Navigation Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/btnManageMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage Menu &amp; Items"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnManageOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manage Orders"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:backgroundTint="@android:color/holo_red_light"/>
+    </LinearLayout>
+
+</LinearLayout>

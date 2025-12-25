@@ -1,5 +1,5 @@
-<resources>
 
+<resources>
 
     <style name="CustomEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/custom_edittext_bg</item>
@@ -10,4 +10,8 @@
         <item name="android:textColorHint">@android:color/darker_gray</item>
         <item name="android:layout_margin">8dp</item>
     </style>
+
+
+
+
 </resources>

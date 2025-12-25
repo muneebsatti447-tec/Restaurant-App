@@ -1,0 +1,6 @@
+<!-- File: res/drawable/status_chip_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#FFA500" /> <!-- Orange Color (aap badal sakte hain) -->
+    <corners android:radius="16dp" />
+</shape>

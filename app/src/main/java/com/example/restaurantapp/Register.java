@@ -79,7 +79,7 @@ public class Register extends AppCompatActivity {
                             String userId = firebaseUser.getUid();
                             HashMap<String, Object> userData = new HashMap<>();
                             userData.put("email", email);
-                            userData.put("isAdmin", false);
+                            userData.put("role", "customer");
 
                             databaseReference.child("Users").child(userId).setValue(userData)
                                     .addOnSuccessListener(aVoid -> {
