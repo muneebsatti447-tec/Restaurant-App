@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CartActivity"
-    android:background="@drawable/cartbackground">
+    android:background="@drawable/hamburger_8026582_1280">
 
     <TextView
         android:id="@+id/cartTitle"
@@ -42,6 +42,7 @@
         android:padding="16dp"
         android:background="#E0E0E0"
         android:text="Total: Rs. 0.00"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"

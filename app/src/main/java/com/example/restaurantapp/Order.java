@@ -6,13 +6,12 @@ public class Order {
     private String customerName;
     private String orderStatus;
     private long timestamp;
-    private Double totalPrice; // <-- YAHAN TABDEELI KI GAYI HAI
+    private Double totalPrice;
     private List<FoodItem> items;
     private String orderId;
     private String shippingAddress;
 
     public Order() {
-        // Firebase ke liye khaali constructor zaroori hai
     }
 
     public String getCustomerName() {
@@ -23,11 +22,12 @@ public class Order {
         return orderStatus;
     }
 
+
     public long getTimestamp() {
         return timestamp;
     }
 
-    public Double getTotalPrice() { // <-- YAHAN BHI TABDEELI KI GAYI HAI
+    public Double getTotalPrice() {
         return totalPrice;
     }
 

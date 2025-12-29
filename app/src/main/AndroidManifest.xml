@@ -14,6 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantApp">
         <activity
+            android:name=".EditItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".OrderDetailsActivity"
             android:exported="false" />
         <activity
@@ -23,16 +32,10 @@
             android:name=".ManageOrdersActivity"
             android:exported="false" />
         <activity
-            android:name=".AddItemActivity"
-            android:exported="false" />
-        <activity
             android:name=".ViewItemsActivity"
             android:exported="false" />
         <activity
             android:name=".AdminPanelActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ManageMenuActivity"
             android:exported="false" />
         <activity
             android:name=".OrderTrackingActivity"

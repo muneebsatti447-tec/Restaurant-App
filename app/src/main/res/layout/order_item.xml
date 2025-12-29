@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    app:cardBackgroundColor="#BFFFFFFF"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Order ID: #12345"
             android:textSize="16sp"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -27,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Customer: John Doe"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvOrderStatus"
@@ -35,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Status: Delivered"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvOrderPrice"
@@ -43,28 +47,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Price: Rs 550.00"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
-        <!-- ===== YAHAN NAYE VIEWS SHAMIL KIYE GAYE HAIN ===== -->
 
-        <!-- Customer Address -->
         <TextView
             android:id="@+id/tvShippingAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Address: 123, ABC Street, Karachi"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
 
-        <!-- Order Items -->
+
         <TextView
             android:id="@+id/tvOrderItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Items: Burger x 2, Pizza x 1"
-            android:textSize="14sp" />
-        <!-- ==================================================== -->
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

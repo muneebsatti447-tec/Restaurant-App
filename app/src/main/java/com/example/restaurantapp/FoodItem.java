@@ -1,61 +1,71 @@
-package com.example.restaurantapp;import com.google.firebase.database.Exclude;
+package com.example.restaurantapp;
 
-public class FoodItem {
+import com.google.firebase.database.Exclude;public class FoodItem {
     private String name;
     private double price;
-    private int imageResource;
+    private String image;
     private int quantity;
 
-    public FoodItem() {
+    @Exclude
+    private String itemId;
+
+    public void incrementQuantity() {
+        this.quantity++;
     }
 
-    public FoodItem(String name, double price, int imageResource) {
-        this.name = name;
-        this.price = price;
-        this.imageResource = imageResource;
-        this.quantity = 1;
-    }
     public String getName() {
         return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getImageResource() {
-        return imageResource;
-    }
-
-    public int getQuantity() {
-        return quantity;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
     public void setPrice(double price) {
         this.price = price;
     }
 
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
+    public String getImage() {
+        return image;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    @Exclude
+    public int getQuantity() {
+        return quantity;
+    }
+
+    @Exclude
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
     @Exclude
-    public void incrementQuantity() {
-        this.quantity++;
+    public String getItemId() {
+        return itemId;
     }
 
     @Exclude
-    public void decrementQuantity() {
-        if (this.quantity > 1) {
-            this.quantity--;
-        }
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    // Constructors...
+    public FoodItem() {
+        this.quantity = 1;
+    }
+
+    public FoodItem(String name, double price, String image) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.quantity = 1;
     }
 }

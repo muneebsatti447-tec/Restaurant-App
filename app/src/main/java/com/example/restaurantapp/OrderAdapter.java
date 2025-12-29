@@ -17,8 +17,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         this.orderList = orderList;
     }
 
-    // --- ViewHolder Class (Updated) ---
-    // Ismein naye TextViews shamil kiye gaye hain
     static class OrderViewHolder extends RecyclerView.ViewHolder {
         TextView tvOrderId, tvCustomerName, tvOrderStatus, tvOrderPrice, tvShippingAddress, tvOrderItems;
 
@@ -42,13 +40,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         return new OrderViewHolder(view);
     }
 
-    // --- onBindViewHolder Method (Updated) ---
-    // Yeh method naye TextViews ko data se bind karega
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
         Order order = orderList.get(position);
 
-        // Pehle se maujood data set karein
         holder.tvOrderId.setText("Order ID: " + order.getOrderId());
         holder.tvCustomerName.setText("Customer: " + (order.getCustomerName() != null ? order.getCustomerName() : "N/A"));
         holder.tvOrderStatus.setText("Status: " + order.getOrderStatus());
@@ -58,17 +53,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
             holder.tvOrderPrice.setText("Price: N/A");
         }
 
-        // ===== YAHAN NAYA LOGIC SHAMIL KIYA GAYA HAI =====
-
-        // 1. Shipping Address set karein
         if (order.getShippingAddress() != null && !order.getShippingAddress().isEmpty()) {
             holder.tvShippingAddress.setText("Address: " + order.getShippingAddress());
             holder.tvShippingAddress.setVisibility(View.VISIBLE);
         } else {
-            holder.tvShippingAddress.setVisibility(View.GONE); // Agar address nahin hai to hide karein
+            holder.tvShippingAddress.setVisibility(View.GONE);
         }
 
-        // 2. Order Items ki list set karein
+
         List<FoodItem> items = order.getItems();
         if (items != null && !items.isEmpty()) {
             StringBuilder itemsText = new StringBuilder("Items: ");
@@ -77,16 +69,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
                 if (item != null && item.getName() != null) {
                     itemsText.append(item.getName()).append(" x ").append(item.getQuantity());
                     if (i < items.size() - 1) {
-                        itemsText.append(", "); // Aakhri item ke baad comma na lagayein
+                        itemsText.append(", ");
                     }
                 }
             }
             holder.tvOrderItems.setText(itemsText.toString());
             holder.tvOrderItems.setVisibility(View.VISIBLE);
         } else {
-            holder.tvOrderItems.setVisibility(View.GONE); // Agar items nahin hain to hide karein
+            holder.tvOrderItems.setVisibility(View.GONE);
         }
-        // ===============================================
+
     }
 
     @Override
@@ -94,7 +86,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         return orderList.size();
     }
 
-    // Yeh method data ko update karne ke liye hai
     public void updateOrders(List<Order> newOrders) {
         this.orderList.clear();
         this.orderList.addAll(newOrders);

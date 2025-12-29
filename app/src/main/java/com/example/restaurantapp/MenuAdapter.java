@@ -1,6 +1,9 @@
 package com.example.restaurantapp;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +22,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
     private List<FoodItem> menuItems;
     private Context context;
 
-
     public MenuAdapter(Context context, List<FoodItem> menuItems) {
         this.context = context;
         this.menuItems = menuItems;
@@ -37,8 +39,18 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder
         FoodItem currentItem = menuItems.get(position);
 
         holder.foodNameTextView.setText(currentItem.getName());
-        holder.foodPriceTextView.setText(String.format("Rs. %.2f", currentItem.getPrice())); // Format price
-        holder.foodImageView.setImageResource(currentItem.getImageResource());
+        holder.foodPriceTextView.setText(String.format("Rs. %.2f", currentItem.getPrice()));
+
+
+        try {
+            String base64Image = currentItem.getImage();
+            byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            holder.foodImageView.setImageBitmap(decodedByte);
+        } catch (Exception e) {
+            holder.foodImageView.setImageResource(R.drawable.ic_launcher_background);
+            e.printStackTrace();
+        }
 
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
