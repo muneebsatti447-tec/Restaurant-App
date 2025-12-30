@@ -1,100 +1,138 @@
-# Restaurant App - Android
+📌 Overview
 
-A simple Android application for managing a restaurant. It allows users to register, log in, browse the menu, and add new items to the menu. The app is built using modern Android development practices and utilizes Firebase for backend services.
+This is a simple Android application designed for managing a restaurant. The app allows users to register, log in, browse the restaurant menu, and add new menu items.
+It is developed using modern Android development practices and uses Firebase for backend services.
 
-## ✨ Features
+✨ Features
+🔐 User Authentication
 
-*   **User Authentication:**
-    *   Secure user registration with email and password.
-    *   User login system.
-*   **Menu Management:**
-    *   View a list of available menu items.
-    *   Add new items to the menu.
-*   **User-Friendly Interface:**
-    *   Clean and intuitive UI.
-    *   Engaging animations using Lottie.
+Secure user registration using email and password
 
-## 📸 Screenshots
+User login system powered by Firebase Authentication
 
-*(Yahan aap apne app ke screenshots daal sakte hain)*
+🍽️ Menu Management
 
-| Login Screen | Register Screen | Menu Screen | Add Item Screen |
-| :---: | :---: |:---: |:---: |
-| *(Image of Login Screen)* | *(Image of Register Screen)* | *(Image of Menu Screen)* | *(Image of Add Item Screen)* |
+View a list of available menu items
 
-## 🛠️ Technologies & Libraries Used
+Add new items to the menu
 
-*   **Language:** Kotlin
-*   **UI:** XML Layouts
-*   **Backend & Database:**
-    *   Firebase Authentication for user management.
-    *   Firebase Realtime Database for storing menu data.
-*   **UI Components:**
-    *   Material Components for Android
-    *   AndroidX Libraries (AppCompat, ConstraintLayout, etc.)
-*   **Animations:** Lottie for Android for rich animations.
-*   **Build Tool:** Gradle
+🎨 User-Friendly Interface
 
-## 🚀 Getting Started
+Clean and intuitive UI design
 
-In instructions ko follow karke aap project ko apne local machine par chala sakte hain.
+Engaging animations using Lottie
 
-### Prerequisites
+📸 Screenshots
 
-*   Android Studio (latest version recommended)
-*   Ek Google account Firebase ke liye.
+(You can add screenshots of your application here)
 
-### Installation & Setup
+Login Screen	Register Screen	Menu Screen	Add Item Screen
+Image	Image	Image	Image
+🛠️ Technologies & Libraries Used
+🧑‍💻 Development
 
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/RestaurantApp.git
-    ```
-2.  **Android Studio me open karein:**
-    *   Android Studio open karein.
-    *   `File` > `Open` par click karein aur clone kiye hue project directory ko select karein.
-    *   Android Studio ko project build aur sync karne dein.
+Language: Kotlin
 
-3.  **Firebase Setup:**
-    *   [Firebase Console](https://console.firebase.google.com/) par jaayein.
-    *   Ek naya project banayein.
-    *   Apne Firebase project me ek Android app add karein `com.example.restaurantapp` package name ke saath (ya aapke app ka actual package name).
-    *   Setup instructions follow karke `google-services.json` file download karein.
-    *   `google-services.json` file ko apne Android Studio project ke `app/` directory me rakhein.
-    *   Firebase Console me, **Authentication** section me jaayein aur **Email/Password** sign-in method enable karein.
-    *   **Realtime Database** section me jaayein, ek database banayein, aur security rules set karein. Development ke liye, aap unhe public set kar sakte hain:
-        ```json
-        {
-          "rules": {
-            ".read": "true",
-            ".write": "true"
-          }
-        }
-        ```
-        **Note:** Ye rules insecure hain aur production environment ke liye aage aacche se configure karne chahiye.
+UI: XML Layouts
 
-4.  **Run the app:**
-    *   Ek target device (emulator ya physical device) select karein.
-    *   Android Studio me `Run` button par click karein.
+☁️ Backend & Database
 
-## Project Structure
-```
+Firebase Authentication – User management
+
+Firebase Realtime Database – Menu data storage
+
+📦 Libraries & Tools
+
+Material Components for Android
+
+AndroidX Libraries (AppCompat, ConstraintLayout, etc.)
+
+Lottie for Android – Animations
+
+Gradle – Build system
+
+🚀 Getting Started
+
+Follow the steps below to run the project on your local machine.
+
+✅ Prerequisites
+
+Android Studio (latest version recommended)
+
+A Google account for Firebase
+
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/RestaurantApp.git
+
+2️⃣ Open the Project in Android Studio
+
+Open Android Studio
+
+Click File > Open
+
+Select the cloned project directory
+
+Allow Android Studio to build and sync the project
+
+3️⃣ Firebase Setup
+
+Go to Firebase Console
+
+Create a new Firebase project
+
+Add an Android app with the package name
+com.example.restaurantapp (or your actual package name)
+
+Download the google-services.json file
+
+Place it inside the app/ directory of your project
+
+Enable Authentication
+
+Go to Authentication → Sign-in method
+
+Enable Email/Password authentication
+
+Configure Realtime Database
+
+Go to Realtime Database
+
+Create a database
+
+Set the following rules for development:
+
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+
+
+⚠️ Note: These rules are insecure and should be properly configured for production use.
+
+4️⃣ Run the Application
+
+Select a target device (emulator or physical device)
+
+Click the Run button in Android Studio
+
+📂 Project Structure
 RestaurantApp/
 ├── app/
 │   ├── src/
 │   │   ├── main/
-│   │   │   ├── java/com/example/restaurantapp/  # Kotlin source files
+│   │   │   ├── java/com/example/restaurantapp/   # Kotlin source files
 │   │   │   │   ├── MainActivity.kt
 │   │   │   │   ├── RegisterActivity.kt
 │   │   │   │   ├── MenuActivity.kt
 │   │   │   │   └── AddItemActivity.kt
-│   │   │   ├── res/                              # Resources
-│   │   │   │   ├── layout/                       # XML Layout files
-│   │   │   │   ├── drawable/                     # Images and drawables
-│   │   │   │   ├── raw/                          # Lottie animation files
-│   │   │   │   └── values/                       # colors, strings, styles
+│   │   │   ├── res/                               # Resources
+│   │   │   │   ├── layout/                        # XML layout files
+│   │   │   │   ├── drawable/                      # Images and drawables
+│   │   │   │   ├── raw/                           # Lottie animation files
+│   │   │   │   └── values/                        # Colors, strings, styles
 │   │   │   └── AndroidManifest.xml
-│   │   └── build.gradle                          # App-level build script
-└── build.gradle                                  # Project-level build script
-```
-
+│   │   └── build.gradle                           # App-level Gradle file
+└── build.gradle                                   # Project-level Gradle file
